@@ -1,0 +1,25 @@
+nav{
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.link{
+    margin-right: 70px;
+    text-decoration: none;
+}
+
+.user{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+}
+
+.user p{
+    margin-right: 50px;
+}
+
+.user div{
+    cursor: pointer;
+}

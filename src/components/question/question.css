@@ -1,0 +1,15 @@
+.question-container{
+    font-size: 20px;
+    margin: 0  auto;
+    width: 60%;
+}
+
+.question-details{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+[type=radio]{
+    /* display: inline-block; */
+}
