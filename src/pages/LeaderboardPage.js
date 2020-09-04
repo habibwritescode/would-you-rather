@@ -4,10 +4,10 @@ import { connect } from 'react-redux'
 import LeaderBoardCard from '../components/leader-board-card/LeaderBoardCard';
 
 
-function LeaderBoardPage() {
+function LeaderBoardPage(props) {
     return (
         <ul>
-            {this.props.sortIds.map(id => (
+            {props.sortIds.map(id => (
                 <LeaderBoardCard key={id} id={id} />
             ))}
         </ul>
