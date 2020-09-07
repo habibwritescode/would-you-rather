@@ -16,21 +16,22 @@ class Poll extends Component {
         const { id, history } = this.props
         history.push(`/question/${id}`)
     }
-    
+
     render() {
-        const { author, optionOne } = this.props.question
-        const { name, avatarURL } = this.props.users[author]
+        const { questionObj, userObj, users, id } = this.props
+        const { author, optionOne } = questionObj
+        const { name, avatarURL } = users[author]
         return (
-            <div className='poll-container'>
-                <p>{name} asks:</p>
+            <div className='card poll-container'>
+                <p className='asked-by'>{name} asks:</p>
                 <div className='details'>
-                    <img className='avatar' src={avatarURL} alt='' />
+                    <img src={avatarURL} alt={name} />
                     <div className='would-you'>
                         <p>Would you rather</p>
-                        <p>{optionOne.text}...</p>
-                        {this.props.user.answers.hasOwnProperty(this.props.id) ?
-                            <button onClick={this.viewResult}>View Result</button> :
-                            <button onClick={this.viewPoll} className='btn'>View Poll</button>
+                        <p>...{optionOne.text}...</p>
+                        {userObj.answers.hasOwnProperty(id) ?
+                            <button className='poll-btn' onClick={this.viewResult}>View Result</button> :
+                            <button className='poll-btn' onClick={this.viewPoll}>View Poll</button>
                         }
                     </div>
                 </div>
@@ -40,12 +41,12 @@ class Poll extends Component {
 }
 
 function mapStateToProps({ authedUser, users, questions }, { id }) {
-    const question = questions[id]
-    const user = users[authedUser]
+    const questionObj = questions[id]
+    const userObj = users[authedUser]
     return {
-        question,
+        questionObj,
         users,
-        user,
+        userObj,
         id
     }
 }

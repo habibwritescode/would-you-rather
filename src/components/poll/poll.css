@@ -1,26 +1,17 @@
 .poll-container{
-    border: 1px solid gray;
-    font-size: 20px;
-    margin: 0 auto;
-    /* padding: 10px; */
-    width: 60%;
-}
-
-.avatar{
-    border-radius: 50%;
-    width: 60px;
+    margin: 20px;
 }
 
 .details{
-    align-items: center;
     display: flex;
-    padding: 15px;
+    padding: 20px;
 }
 
-.would-you{
-    margin-left: 30px;
+.would-you > p:nth-child(2){
+    font-size: 0.9em;
+    margin: 20px 0;
 }
 
-.btn{
-margin-top: 5px;
+.poll-btn{
+    width: 100%;
 }

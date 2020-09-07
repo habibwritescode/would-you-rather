@@ -1,15 +1,17 @@
-.question-container{
-    font-size: 20px;
-    margin: 0  auto;
-    width: 60%;
-}
-
 .question-details{
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    padding: 20px;
+    /* align-items: center; */
 }
 
-[type=radio]{
-    /* display: inline-block; */
+.option-one{
+    margin: 20px 10px 20px 0;
+}
+
+.option-two{
+    margin: 0 10px 20px 0;
+}
+
+.question-container button{
+    width: 100%;
 }

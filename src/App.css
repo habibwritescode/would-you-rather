@@ -1,3 +1,5 @@
+ /* Global styles that cuts across more than one component */
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -5,7 +7,63 @@
 }
 
 body{
-    max-width: 800px;
+    font-family: 'Open Sans', sans-serif;
     margin: 0 auto;
-    padding: 20px 0;
+    width: 80vw;
+}
+
+.container{
+    width: 60%;
+    margin: 30px auto 0;
+}
+
+.card{
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.card img{
+    align-self: center;
+    width: 100px;
+}
+
+.card .would-you{
+    margin-left: 30px;
+    padding-left: 30px;
+    border-left: 1px solid gainsboro;
+    width: 100%;
+}
+
+.would-you > p:nth-child(1){
+    font-weight: 600;
+}
+
+.asked-by{
+    background-color: rgb(223, 207, 145);
+    font-size: 1em;
+    font-weight: 700;
+    padding: 15px;
+}
+
+img{
+    border-radius: 50%;
+}
+
+button{
+    background-color: cornflowerblue;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    padding: 10px 20px;
+}
+
+button:disabled{
+    opacity: 0.5;
+}
+
+a{
+    color: black;
 }

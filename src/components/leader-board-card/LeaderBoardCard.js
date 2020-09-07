@@ -3,24 +3,22 @@ import { connect } from 'react-redux';
 
 import './leader-board-card.css'
 
-import Avatar from '../avatar/Avatar';
-
 
 function LeaderBoardCard(props) {
     const { users, id } = props
-    const user = users[id]
+    const userObj = users[id]
     return (
-        <li>
-            <div>
-                <Avatar source={user.avatarURL} />
-                <div>
-                    <h1>{user.name}</h1>
-                    <p>Answered questions {Object.keys(user.answers).length}</p>
-                    <p>Created questions {user.questions.length}</p>
+        <li className='container leader'>
+            <div className='leaderboard-container'>
+                <img src={userObj.avatarURL} alt={userObj.name} />
+                <div className='lead-user'>
+                    <p>{userObj.name}</p>
+                    <p>Answered questions <span>{Object.keys(userObj.answers).length}</span></p>
+                    <p>Created questions <span>{userObj.questions.length}</span></p>
                 </div>
-                <div>
+                <div className='lead-score'>
                     <h3>Score</h3>
-                    <span>Score is {Object.keys(user.answers).length + user.questions.length}</span>
+                    <span>{Object.keys(userObj.answers).length + userObj.questions.length}</span>
                 </div>
             </div>
         </li>

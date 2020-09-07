@@ -4,36 +4,34 @@ import { withRouter } from 'react-router-dom'
 
 import './result.css'
 
-import Avatar from '../avatar/Avatar';
-
 
 class Result extends Component {
     render() {
         const { question, authedUser, users, id } = this.props
-        const user = users[authedUser]
+        const userObj = users[authedUser]
         const questionAuthor = users[question.author]
         const optionOneVotes = question.optionOne.votes.length
         const optionTwoVotes = question.optionTwo.votes.length
         const totalVotes = optionOneVotes + optionTwoVotes
-        
+
         return (
-            <div className='result-container'>
-                <p>Asked by {questionAuthor.name}</p>
+            <div className='container card result-container'>
+                <p className='asked-by'>Asked by {questionAuthor.name}</p>
                 <div className='result-details'>
-                    <Avatar source={questionAuthor.avatarURL} />
+                    <img src={userObj.avatarURL} alt={userObj.name} />
                     <div className='result'>
-                        <p>Results:</p>
+                        <p className='result-heading'>Results:</p>
                         <div>
-                            {user.answers[id] === 'optionOne' && <p>You chose this option</p>}
-                            <p>Would you rather {question.optionOne.text}</p>
-                            <span>{((optionOneVotes / totalVotes) * 100).toFixed(1)}% of people chose this</span>
-                            <span>{`${optionOneVotes} out of ${totalVotes} votes`}</span>
+                            {userObj.answers[id] === 'optionOne' && <p className='choice'>Your choice <i class="fas fa-heart"></i></p>}
+                            <p className='option'>Would you rather {question.optionOne.text}</p>
+                            <span className='percent'>{((optionOneVotes / totalVotes) * 100).toFixed(1)}% of people chose this</span>
+                            <span className='votes'>{`${optionOneVotes} out of ${totalVotes} votes`}</span>
                         </div>
                         <div>
-                            {user.answers[id] === 'optionTwo' && <p>You chose this option</p>}
-                            <p>Would you rather {question.optionTwo.text}</p>
-                            <span>{((optionTwoVotes / totalVotes) * 100).toFixed(1)}% of people chose this</span>
-                            <span>{`${optionTwoVotes} out of ${totalVotes} votes`}</span>
+                            {userObj.answers[id] === 'optionTwo' && <p className='choice'>Your choice <i class="fas fa-heart"></i></p>}
+                            <p className='option'>Would you rather {question.optionTwo.text}</p>
+                            <span className='percent'>{((optionTwoVotes / totalVotes) * 100).toFixed(1)}% of people chose this</span>
+                            <span className='votes'>{`${optionTwoVotes} out of ${totalVotes} votes`}</span>
                         </div>
                     </div>
                 </div>

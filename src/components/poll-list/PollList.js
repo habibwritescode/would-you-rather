@@ -8,22 +8,36 @@ import Poll from '../poll/Poll'
 
 class PollList extends Component {
     state = {
-        ids: this.props.unAnswered
+        ids: this.props.unAnswered,
+        activeLink: 'unanswered'
     }
 
     render() {
+        const { unAnswered, answered } = this.props
+        const { ids, activeLink } = this.state
         return (
-            <div className='polllist-container' >
+            <div className='container polllist-container' >
                 <div className='questions'>
-                    <p onClick={() => this.setState({
-                        ids: this.props.unAnswered
-                    })}>Unanswered Questions</p>
-                    <p onClick={() => this.setState({
-                        ids: this.props.answered
-                    })}>Answered Questions</p>
+                    <p
+                        className={activeLink === 'unanswered' && 'unanswered'}
+                        onClick={() => this.setState({
+                            ids: unAnswered,
+                            activeLink: 'unanswered'
+                        })}
+                    >Unanswered Questions</p>
+
+                    <p
+                        className={activeLink === 'answered' && 'answered'}
+                        onClick={() => this.setState({
+                            ids: answered,
+                            activeLink: 'answered'
+
+                        })}
+                    >Answered Questions</p>
                 </div>
+
                 <ul>
-                    {this.state.ids.map(id => (
+                    {ids.map(id => (
                         <Poll key={id} id={id} />
                     )
                     )}
@@ -34,8 +48,8 @@ class PollList extends Component {
 }
 
 function mapStateToProps({ authedUser, users, questions }) {
-    const sortIds = Object.keys(questions)
-        .sort((a, b) => questions[b].timestamp - questions[a].timestamp)
+    const sortIds = Object.keys(questions).sort((a, b) => questions[b].timestamp - questions[a].timestamp)
+
     const user = users[authedUser]
     return {
         unAnswered: sortIds.filter(id => user.answers.hasOwnProperty(id) === false),

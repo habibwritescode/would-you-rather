@@ -1,12 +1,13 @@
 nav{
+    align-items: center;
     display: flex;
     flex-direction: row;
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 1.2em;
+    margin: 20px 0;
 }
 
 .link{
-    margin-right: 70px;
+    margin-right: 50px;
     text-decoration: none;
 }
 
@@ -14,12 +15,15 @@ nav{
     display: flex;
     flex-direction: row;
     margin-left: auto;
+    align-items: center;
 }
 
 .user p{
-    margin-right: 50px;
+    margin: 0 20px 0;
 }
 
-.user div{
-    cursor: pointer;
+.nav-img{
+    border-radius: 50%;
+    width: 50px;
+    margin-right: 40px;
 }

@@ -14,6 +14,8 @@ import LeaderboardPage from './pages/LeaderboardPage';
 import Question from './components/question/Question';
 import Result from './components/result/Result';
 import { handleInitialData } from './redux/actions/shared';
+import NoMatch from './components/NoMatch';
+
 
 class App extends Component {
   componentDidMount() {
@@ -29,32 +31,33 @@ class App extends Component {
           {this.props.loading === true
             ? null
             :
-            <div>
-              <Switch>
-                <PrivateRoute exact path='/'>
-                  <HomePage />
-                </PrivateRoute>
-                <PrivateRoute path='/add'>
-                  <NewQuestion />
-                </PrivateRoute>
-                <PrivateRoute path='/leaderboard'>
-                  <LeaderboardPage />
-                </PrivateRoute>
-                <PrivateRoute path='/question/:id'>
-                  <Question />
-                </PrivateRoute>
-                <PrivateRoute path='/result/:id'>
-                  <Result />
-                </PrivateRoute>
-                <Route path='/signin' render={() =>
-                  this.props.authedUser ? (
-                    <Redirect to='/' />
-                  ) : (
-                      <Signin />
-                    )
-                } />
-              </Switch>
-            </div>
+            <Switch>
+              <PrivateRoute exact path='/'>
+                <HomePage />
+              </PrivateRoute>
+              <PrivateRoute path='/add'>
+                <NewQuestion />
+              </PrivateRoute>
+              <PrivateRoute path='/leaderboard'>
+                <LeaderboardPage />
+              </PrivateRoute>
+              <PrivateRoute path='/question/:id'>
+                <Question />
+              </PrivateRoute>
+              <PrivateRoute path='/result/:id'>
+                <Result />
+              </PrivateRoute>
+              <Route path='/signin' render={() =>
+                this.props.authedUser ? (
+                  <Redirect to='/' />
+                ) : (
+                    <Signin />
+                  )
+              } />
+              <Route path="*">
+                <NoMatch />
+              </Route>
+            </Switch>
           }
         </div>
       </Fragment>

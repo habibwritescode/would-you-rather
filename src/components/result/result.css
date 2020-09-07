@@ -1,24 +1,55 @@
 .result-container{
-    border: 1px solid gray;
-    margin: 0 auto;
-    width: 60%;
+
 }
 
 .result-details{
-    align-items: center;
+    /* align-items: center; */
     display: flex;
-    flex-direction: row;
-    padding: 20px;
+    /* flex-direction: row; */
+    padding: 20px 25px;
+}
+
+.result-details img{
+    margin: 0 auto;
+    width: 120px;
 }
 
 .result{
-    margin-left: 30px;
+    margin: 0 auto;
+    padding-left: 30px;
+    border-left: 1px solid gainsboro;
+}
+
+.result-heading{
+    font-size: 1.3em;
+    font-weight: 700;
 }
 
 .result div{
-    margin-bottom: 10px;
+    background-color: rgb(175, 202, 253);
+    margin-top: 20px;
+    padding: 30px;
+    position: relative;
+    text-align: center;
+}
+
+.choice{
+    font-size: 0.9em;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+.option{
+    text-align: left;
+    font-weight: 600;
+}
+
+.percent{
+    margin: 10px 0;
 }
 
 .result span{
     display: block;
+    font-size: 0.9em;
 }

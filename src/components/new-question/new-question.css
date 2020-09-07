@@ -1,0 +1,38 @@
+.new-q-heading{
+    background-color: rgb(223, 207, 145);
+    font-size: 1.5em;
+    padding: 20px 10px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.would-you-container{
+    padding: 0px 20px;
+}
+
+.new-q-would-you{
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.would-you-container input{
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    font-size: 0.9em;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+}
+
+.would-you-container button{
+    display: block;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.or{
+    font-weight: 600;
+    text-align: center;
+    margin: 10px 0;
+}

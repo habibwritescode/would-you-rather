@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 
 import './nav.css'
 
-import Avatar from '../avatar/Avatar';
 import { logOutUser } from '../../redux/actions/authedUser'
 
 
@@ -15,12 +14,17 @@ class Nav extends Component {
     }
 
     render() {
+        const { userObj } = this.props
         return (
-            <nav className='row'>
+            <nav className='nav'>
                 <NavLink
                     exact
                     to='/'
                     className='link'
+                    activeStyle={{
+                        fontWeight: "bold",
+                        color: "cornflowerblue"
+                    }}
                 >
                     Home
             </NavLink>
@@ -28,6 +32,10 @@ class Nav extends Component {
                 <NavLink
                     to='/add'
                     className='link'
+                    activeStyle={{
+                        fontWeight: "bold",
+                        color: "cornflowerblue"
+                    }}
                 >
                     New Poll
             </NavLink>
@@ -35,15 +43,19 @@ class Nav extends Component {
                 <NavLink
                     to='/leaderboard'
                     className='link'
+                    activeStyle={{
+                        fontWeight: "bold",
+                        color: "cornflowerblue"
+                    }}
                 >
                     Leader Board
             </NavLink>
 
-                {this.props.user &&
+                {userObj &&
                     <div className='row user'>
-                        <p>Hello, {this.props.user.name}</p>
-                        <Avatar source={this.props.user.avatarURL} />
-                        <div onClick={this.logOutUser}>Logout</div>
+                        <p>Hello, {userObj.name}</p>
+                        <img className='nav-img' src={userObj.avatarURL} alt={`${userObj.name}`} />
+                        <button onClick={this.logOutUser}>Logout</button>
                     </div>
                 }
             </nav>
@@ -53,7 +65,7 @@ class Nav extends Component {
 
 function mapStateToProps({ authedUser, users }) {
     return {
-        user: users[authedUser],
+        userObj: users[authedUser],
     }
 }
 

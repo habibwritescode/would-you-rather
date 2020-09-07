@@ -1,0 +1,48 @@
+.leader{
+    width: 45%;
+}
+
+.leaderboard-container{
+    align-items: center;
+    border: 1px solid gainsboro;   
+    border-radius: 5px;
+    display: flex;
+    padding: 20px;
+}
+
+.leaderboard-container img{
+    width: 80px;
+}
+
+li{
+    list-style: none;
+}
+
+.lead-user{
+    border-left: 1px solid gainsboro;
+    border-right: 1px solid gainsboro;
+    margin: 0 20px;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.lead-user p{
+    display: flex;
+}
+
+.lead-user > p:nth-child(1){
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.lead-user > p:nth-child(2){
+    margin: 20px 0;
+}
+
+.lead-user span{
+    margin-left: auto;
+}
+
+.lead-score h3{
+    margin-bottom: 10px;
+}
