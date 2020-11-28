@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom'
-import { connect } from 'react-redux'
+import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import './nav.css'
+import './nav.css';
 
-import { logOutUser } from '../../redux/actions/authedUser'
+import { logOutUser } from '../../redux/actions/authedUser';
 
 
 class Nav extends Component {
@@ -14,16 +14,20 @@ class Nav extends Component {
     }
 
     render() {
-        const { userObj } = this.props
+        const { userObj, open, closeNavOnLinkClick } = this.props
         return (
-            <nav className='nav'>
+            <div
+                className={`nav ${open ? 'nav-open' : 'nav-close'}`}
+                onClick={closeNavOnLinkClick}
+            >
                 <NavLink
                     exact
                     to='/'
+                    id='event-target'
                     className='link'
                     activeStyle={{
                         fontWeight: "bold",
-                        color: "cornflowerblue"
+                        color: "#4724d5"
                     }}
                 >
                     Home
@@ -31,10 +35,11 @@ class Nav extends Component {
 
                 <NavLink
                     to='/add'
+                    id='event-target'
                     className='link'
                     activeStyle={{
                         fontWeight: "bold",
-                        color: "cornflowerblue"
+                        color: "#1f5ed2"
                     }}
                 >
                     New Poll
@@ -42,31 +47,38 @@ class Nav extends Component {
 
                 <NavLink
                     to='/leaderboard'
+                    id='event-target'
                     className='link'
                     activeStyle={{
                         fontWeight: "bold",
-                        color: "cornflowerblue"
+                        color: "#1f5ed2"
                     }}
                 >
                     Leader Board
             </NavLink>
 
                 {userObj &&
-                    <div className='row user'>
+                    <div className='user'>
                         <p>Hello, {userObj.name}</p>
                         <img className='nav-img' src={userObj.avatarURL} alt={`${userObj.name}`} />
-                        <button onClick={this.logOutUser}>Logout</button>
+                        <button
+                            id='event-target'
+                            onClick={this.logOutUser}
+                        >
+                            Logout</button>
                     </div>
                 }
-            </nav>
+            </div>
         )
     }
 }
 
-function mapStateToProps({ authedUser, users }) {
+function mapStateToProps({ authedUser, users }, { open, closeNavOnLinkClick }) {
     return {
         userObj: users[authedUser],
+        open,
+        closeNavOnLinkClick
     }
 }
 
-export default connect(mapStateToProps)(Nav)
+export default connect(mapStateToProps)(Nav);

@@ -6,7 +6,7 @@ import LeaderBoardCard from '../components/leader-board-card/LeaderBoardCard';
 
 function LeaderBoardPage(props) {
     return (
-        <ul>
+        <ul className='leaderboard-page-cont'>
             {props.sortIds.map(id => (
                 <LeaderBoardCard key={id} id={id} />
             ))}

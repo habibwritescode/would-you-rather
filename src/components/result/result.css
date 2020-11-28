@@ -1,11 +1,11 @@
-.result-container{
+/* .result-container{
 
-}
+} */
 
 .result-details{
     /* align-items: center; */
     display: flex;
-    /* flex-direction: row; */
+    flex-direction: column;
     padding: 20px 25px;
 }
 
@@ -17,7 +17,7 @@
 .result{
     margin: 0 auto;
     padding-left: 30px;
-    border-left: 1px solid gainsboro;
+    border-left: none;
 }
 
 .result-heading{
@@ -52,4 +52,15 @@
 .result span{
     display: block;
     font-size: 0.9em;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .result-details{
+        flex-direction: row;
+    }
+    
+    .result{
+        border-left: 1px solid gainsboro;
+    }
 }

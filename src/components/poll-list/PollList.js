@@ -19,7 +19,7 @@ class PollList extends Component {
             <div className='container polllist-container' >
                 <div className='questions'>
                     <p
-                        className={activeLink === 'unanswered' && 'unanswered'}
+                        className={activeLink === 'unanswered' ? 'unanswered' : undefined}
                         onClick={() => this.setState({
                             ids: unAnswered,
                             activeLink: 'unanswered'
@@ -27,7 +27,7 @@ class PollList extends Component {
                     >Unanswered Questions</p>
 
                     <p
-                        className={activeLink === 'answered' && 'answered'}
+                        className={activeLink === 'answered' ? 'answered' : undefined}
                         onClick={() => this.setState({
                             ids: answered,
                             activeLink: 'answered'

@@ -1,0 +1,59 @@
+.burger-cont{
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1000;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .burger-cont{
+        display: flex;
+        justify-content: space-around;
+        flex-flow: column nowrap;
+    }
+}
+
+.bar{
+    width: 2rem;
+    height: 0.25rem;
+    border-radius: 10px;
+    transform-origin: 1px;
+    transition: all 0.3s linear;
+}
+
+.bar-open-color{
+    background-color: #1f5ed2;
+}
+
+.bar-close-color{
+    background-color: #333;
+}
+
+.open:nth-child(1){
+    transform: rotate(45deg);
+}
+
+.close:nth-child(1){
+    transform: rotate(0);
+}
+
+.open:nth-child(2){
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.close:nth-child(2){
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.open:nth-child(3){
+    transform: rotate(-45deg);
+}
+
+.close:nth-child(3){
+    transform: rotate(0);
+}

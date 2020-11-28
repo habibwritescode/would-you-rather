@@ -1,7 +1,7 @@
-nav{
+.nav{
     align-items: center;
     display: flex;
-    flex-direction: row;
+    flex-flow: row nowrap;
     font-size: 1.2em;
     margin: 20px 0;
 }
@@ -26,4 +26,58 @@ nav{
     border-radius: 50%;
     width: 50px;
     margin-right: 40px;
+}
+
+@media (max-width: 768px) {
+    .nav{
+        flex-flow: column nowrap;
+        background-color: #dfcf91;
+        position: fixed;
+        top: -20px;
+        right: 0;
+        height: 100vh;
+        width: 300px;
+        padding-top: 3.5rem;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-open{
+        transform: translateX(0);
+    }
+
+    .nav-close{
+        transform: translateX(100%);
+    }
+
+    .user{
+        flex-direction: column;
+        margin: 0;
+        align-items: center; 
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .user button{
+        background-color: #1f5ed2;
+        color: white;
+    }
+
+    .link{
+        margin-right: 0;
+        margin: 10px 0px;
+    }
+
+    .nav-img{
+        margin: 20px 0;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
 }

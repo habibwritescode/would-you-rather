@@ -6,7 +6,6 @@ import LoadingBar from 'react-redux-loading'
 import './App.css';
 
 import PrivateRoute from './components/PrivateRoute'
-import Nav from './components/nav/Nav'
 import Signin from './components/signin/Signin'
 import HomePage from './pages/HomePage';
 import NewQuestion from './components/new-question/NewQuestion';
@@ -15,6 +14,7 @@ import Question from './components/question/Question';
 import Result from './components/result/Result';
 import { handleInitialData } from './redux/actions/shared';
 import NoMatch from './components/NoMatch';
+import Burger from './components/burger/Burger';
 
 
 class App extends Component {
@@ -27,7 +27,7 @@ class App extends Component {
       <Fragment>
         <LoadingBar style={{ backgroundColor: 'blue' }} />
         <div className="App">
-          <Nav />
+          <Burger />
           {this.props.loading === true
             ? null
             :

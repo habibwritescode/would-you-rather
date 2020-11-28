@@ -1,5 +1,5 @@
 .leader{
-    width: 45%;
+    width: 90%;
 }
 
 .leaderboard-container{
@@ -45,4 +45,18 @@ li{
 
 .lead-score h3{
     margin-bottom: 10px;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .leader{
+        width: 80%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .leader{
+        width: 60%;
+    }
 }
