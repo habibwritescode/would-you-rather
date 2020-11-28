@@ -11,7 +11,7 @@
 }
 
 .leaderboard-container img{
-    width: 80px;
+    width: 60px;
 }
 
 li{
@@ -21,8 +21,8 @@ li{
 .lead-user{
     border-left: 1px solid gainsboro;
     border-right: 1px solid gainsboro;
-    margin: 0 20px;
-    padding: 0 20px;
+    margin: 0 10px;
+    padding: 0 10px;
     width: 100%;
 }
 
@@ -31,7 +31,7 @@ li{
 }
 
 .lead-user > p:nth-child(1){
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-weight: 600;
 }
 
@@ -52,6 +52,20 @@ li{
     .leader{
         width: 80%;
     }
+
+    .leaderboard-container img{
+        width: 80px;
+    }
+    
+    .lead-user{
+        margin: 0 20px;
+        padding: 0 20px;
+    }
+    
+    .lead-user > p:nth-child(1){
+        font-size: 1.3em;
+    }
+    
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

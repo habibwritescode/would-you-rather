@@ -27,7 +27,7 @@ class Nav extends Component {
                     className='link'
                     activeStyle={{
                         fontWeight: "bold",
-                        color: "#4724d5"
+                        color: "#1f5ed2"
                     }}
                 >
                     Home
