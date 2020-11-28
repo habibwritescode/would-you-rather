@@ -31,6 +31,7 @@
     padding: 30px;
     position: relative;
     text-align: center;
+    z-index: -1;
 }
 
 .choice{
